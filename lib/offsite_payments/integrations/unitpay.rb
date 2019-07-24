@@ -88,18 +88,18 @@ module OffsitePayments #:nodoc:
           }.to_json
         end
 
-        def fail_check_response(*args)
+        def fail_check_response(msg = "Произошла ошибка")
           {
             error: {
-              message: "Описание ошибки"
+              message: msg
             }
           }.to_json
         end
 
-        def fail_pay_response(*args)
+        def fail_pay_response(msg = "Произошла ошибка")
           {
             error: {
-              message: "Описание ошибки"
+              message: msg
             }
           }.to_json
         end
