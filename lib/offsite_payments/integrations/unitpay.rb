@@ -45,7 +45,7 @@ module OffsitePayments #:nodoc:
         end
 
         def payment_id
-          params['account']
+          params['unitpayId']
         end
 
         def gross
