@@ -10,7 +10,7 @@ module OffsitePayments #:nodoc:
 
         def generate_signature_string
           params_string = params.except("sign", "signature").keys.sort.collect {|k| params[k] }.join '{up}'
-          "#{method_name}{up}params_string{up}#{secret}"
+          "#{method_name}{up}#{params_string}{up}#{secret}"
         end
 
         def generate_signature
