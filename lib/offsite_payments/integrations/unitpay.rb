@@ -14,7 +14,7 @@ module OffsitePayments #:nodoc:
         end
 
         def generate_signature
-          Digest::SHA1.hexdigest(generate_signature_string)
+          Digest::SHA256.hexdigest(generate_signature_string)
         end
       end
 
