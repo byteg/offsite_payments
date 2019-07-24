@@ -22,7 +22,7 @@ module OffsitePayments #:nodoc:
         include Common
         attr_accessor :method_name
 
-        def parse(params)
+        def parse(input_params)
           @params = input_params["params"] || {}
           @method_name = input_params["method"]
         end
