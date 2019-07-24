@@ -5,11 +5,11 @@ module OffsitePayments #:nodoc:
     module Unitpay
       module Common
         def pay?
-          params["method"] == "pay"
+          "pay" == method_name
         end
 
         def generate_signature_string
-          params_string = params["params"].except("sign", "signature").keys.sort.collect {|k| params[k] }.join '{up}'
+          params_string = params.except("sign", "signature").keys.sort.collect {|k| params[k] }.join '{up}'
           "#{method_name}{up}params_string{up}#{secret}"
         end
 
@@ -23,7 +23,7 @@ module OffsitePayments #:nodoc:
         attr_accessor :method_name
 
         def parse(params)
-          @params = params["params"]
+          @params = params["params"] || []
           @method_name = params["method"]
         end
 
