@@ -23,8 +23,8 @@ module OffsitePayments #:nodoc:
         attr_accessor :method_name
 
         def parse(params)
-          @params = params["params"] || []
-          @method_name = params["method"]
+          @params = input_params["params"] || {}
+          @method_name = input_params["method"]
         end
 
         def recognizes?
