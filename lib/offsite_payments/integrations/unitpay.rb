@@ -32,7 +32,7 @@ module OffsitePayments #:nodoc:
         end
 
         def amount
-          amount_in_string = params['profit']
+          amount_in_string = params['payerSum']
           BigDecimal(amount_in_string)
         end
 
