@@ -33,7 +33,7 @@ module OffsitePayments #:nodoc:
 
         def amount
           amount_in_string = params['profit']
-          BigDecimal.new(amount_in_string)
+          BigDecimal(amount_in_string)
         end
 
         def key_present?
